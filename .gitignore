@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Environment Variables
+.env
+
+# Python Cache
+.pytest_cache/
+.mypy_cache/
+
+# SQLite (현재는 MySQL 사용)
+pybo.db
+*.db
+migrations/
+
+# Logs
+*.log

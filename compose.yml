@@ -1,0 +1,36 @@
+services:
+  flask:
+    build: .
+    container_name: flask-app
+
+    command: flask run --host=0.0.0.0 --port=5000
+
+    environment:
+      FLASK_APP: pybo
+      FLASK_DEBUG: 1
+
+    ports:
+      - "8000:5000"
+
+    volumes:
+      - .:/app
+
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: pybo
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:

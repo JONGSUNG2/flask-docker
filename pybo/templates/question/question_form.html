@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+</head>
+<body>
+
+
+
+{% block content %}
+
+<div class="container">
+  <h5 class="my-3 border-bottom pb-2">질문등록</h5>
+  <form method="post" class="my-3">
+    {{ form.subject.label }}
+    {{ form.subject() }}
+
+    {{ form.content.label }}
+    {{ form.content() }}
+
+    <button type="submit" class="btn btn-primary">저장하기</button>
+  </form>
+</div>
+{% endblock %}
+</body>
+</html>
